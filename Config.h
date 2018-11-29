@@ -1,0 +1,73 @@
+#ifndef SYNTH_CONFIG
+#define SYNTH_CONFIG
+
+/*
+ * DEBUGGING
+ */
+#define DEBUG 0
+
+/**
+ * AUDIO OUTPUT
+ */
+#define SAMPLE_RATE 32768
+#define MAX_AMPLITUDE 4095
+
+/*
+ * MAXIMAL VALUES
+ */
+#define MAX_INT32_VAL 4294967295L
+#define MAX_INT16_VAL 65535
+#define MAX_INT12_VAL 4095
+#define MAX_INT8_VAL 255
+
+/*
+ * DAC CONFIG
+ */
+#define CS_PIN 9
+#define LATCH_PIN 10
+
+/**
+ * OSCILLATOR TYPES
+ */
+#define OSC_NUMBER 2
+#define SAW_OSC 1
+#define INV_SAW_OSC 2
+#define TRIANGLE_OSC 3
+#define PULSE_OSC 4
+#define SINE_OSC 5
+#define NOISE 6
+
+#define OSC1_TYPE RAMP_OSC
+#define OSC2_TYPE TRIANGLE_OSC
+  
+#define OSC1_LEVEL 255 //1x
+#define OSC2_LEVEL 204  //0,8x
+#define SUB_OSC_LEVEL 192 //0,75x
+
+#define DEFAULT_PULSE_WIDTH MAX_INT32_VAL/2
+
+//Random seed for noise generator
+#define RANDOM_SEED_START 2689
+#define RANDOM_SEED_A 43
+#define RANDOM_SEED_B 779
+
+/**
+ * TABLE SYNTESIS
+ */
+
+#define TABLE_SAMPLE_NUMBER 1023
+/**
+ * CONTROLS CONFIG 
+ */
+//#define OSC2_DETUNE_PIN A0
+#define OSC2_DETUNE_CC 15
+#define OSC2_DETUNE_DEFAULT -20
+
+//#define PULSE_WIDTH_PIN A0
+//#define PULSE_WIDTH_CC 16
+#define PULSE_WIDTH_DEFAULT 50
+
+
+#define MIDI_NOTE_RANGE_MIN 24
+#define MIDI_NOTE_RANGE_MAX 84
+#endif
